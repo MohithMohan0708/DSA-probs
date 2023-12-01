@@ -1,0 +1,27 @@
+#include<stdio.h>
+int main()
+{
+    int temp,n,j;
+    printf("enter the size of the array: \n");
+    scanf("%d",&n);
+    int a[n];
+    printf("enter the elements: \n");
+    for(int i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    for(int i=1;i<n;i++)
+    {
+        temp=a[i];
+        for( int j=i-1;j>=0&&a[j]>temp;j--)
+        {
+            a[j+1]=a[j];
+        }
+        a[j+1]=temp;
+    }
+    printf("elements after sorted are : \n");
+    for(int i=0;i<n;i++)
+    {
+        printf("%d ",a[i]);
+    }
+}
